@@ -1,0 +1,199 @@
+@use "sass:math";
+
+.index-header{
+    width: 100%;
+    height: 100vh;
+    background: $primary-light;
+    position: relative;
+}
+// index header grid styles.
+.item-one{
+    grid-area: 🥽;
+    justify-self: end;
+}
+
+.item-two{
+    grid-area: 🥾;
+    justify-self: start;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.item-three{
+    grid-area: 🏈;
+    justify-self: end;
+}
+
+
+.grid-header{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    grid-template-areas: "🥽 🥽 🏈"
+                         "🥾 . 🏈";
+}
+//-----------------------------------------
+
+
+#sitetitle{
+    font-size: $sz-large;
+    color: $primary;
+    font-weight: $wg-large;
+    letter-spacing: $spacing-text;
+}
+
+#sitesummary{
+    font-weight: $wg-mid;
+    color: $black;
+}
+
+
+.arrow{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: rotate(90deg);
+    font-size: $sz-large;
+    path{
+        fill: $accent;
+        transition: fill .6s ease-in;
+        &:hover{
+            fill: none;
+            stroke: $accent;
+            stroke-width: 3px;
+        }
+    }
+}
+
+.content-summary{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 10px;
+    scroll-behavior: smooth;
+    .section-title{
+        text-transform: capitalize;
+        $sz-mid: 300;
+        font-size: $sz-mid;
+        font-weight: $wg-large;
+        color: #fff;
+        writing-mode: vertical-lr;
+        position: relative;
+        top: 50%;
+        left: 10px;
+    }
+}
+
+
+//content summary grid styles.
+.box-one{grid-area: 🪀;}
+
+.box-two{
+    grid-area: 🧪;
+}
+
+.box-three{
+    grid-area: 🏀;
+}
+
+.grid-content{
+    display: grid;
+    justify-content: space-evenly;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "🪀 🪀 🧪"
+                         "🪀 🪀 🏀";
+}
+
+//--------------------------------------
+
+
+#development{
+    background: $primary;
+    height: 100vh;
+    .dev-details > p{
+        $sz-mid: 2.12rem;
+        font-size: $sz-mid;
+        color: $primary-light;
+        padding:  20px 60px;
+        position: relative;
+        font-weight: $wg-large;
+    }
+    .dev-projects{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $primary-light;
+        padding: 5px 20px;
+        position: relative;
+        left: 5%;
+        border-radius: 10px;
+        article{
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            h2{
+                font-size: math.div($sz-mid, 1.7);
+                text-transform: capitalize;
+                color: $black;
+            }
+            p{
+                font-size: $sz-small;
+                color: $black;
+            }
+        }
+    }
+}
+
+
+#writing{
+    background: $accent;
+    height: 50vh;
+    article p{
+        width: 300px;
+        margin-left: 80px;
+        color: $black;
+        position: relative;
+        top: -60px;
+        margin-bottom: 10px;
+        font-weight: $wg-large;
+        line-height: $text-height;
+    }
+}
+
+#community{
+    background: $black;
+    height: 50vh;
+    article p{
+        width: 300px;
+        color: $primary-light;
+        position: relative;
+        top: 80px;
+        left: 80px;
+        line-height: $text-height;
+    }
+}
+
+
+//hamburger styles
+.hamburger{
+    position: absolute;
+    top: 20px;;
+    left: 20px;
+    cursor: pointer;
+    div{
+        width: 80px;
+        height: 10px;
+        background-color: $accent;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+}
+
+
+

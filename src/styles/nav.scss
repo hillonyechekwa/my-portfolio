@@ -1,0 +1,36 @@
+@use "sass:math";
+
+
+#nav-wrapper{
+       width: 100%;
+       height: 100vh;
+       position: fixed;
+       top: 0;
+       left: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       z-index: 2;
+       background-color: $primary-light;
+       visibility: hidden;
+}
+
+
+#overlay-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    a{
+        margin-bottom: 20px;
+        font-size: math.div($sz-mid, 1.5);
+        font-weight: $wg-mid;
+        color: $primary;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+.site-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.site-content{
+    flex: 1;
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,109 @@
+@use "sass:math";
+
+footer{
+    width: 100%;
+    height: 50vh;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: $accent;
+}
+
+#contact-form{
+    width: 500px;
+    padding: 10px; 
+    margin-left: 40px;
+    background-color: $primary-light;
+    border-radius: $radius-sm;
+    header{
+        width: 100%;
+        height: 80px;
+        h2{
+            $sz-mid: 2.4rem;
+            font-size: $sz-mid;
+            font-weight: $wg-large;
+        }
+    }
+}
+
+.form-control{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 30px;
+    li input[type="email"]{
+        border-style: solid;
+        width: 200px;
+        border-radius: $radius-sm;
+        border-color: $black;
+        font-family: $family;
+        margin-left: 10px;
+    }
+    li label{
+        text-transform: capitalize;
+        color: $primary;
+        &:focus{
+            outline-color: $accent;
+        }
+    }
+    li textarea{
+        width: 200px;
+        border-color: $black;
+        border-style: solid;
+        border-radius: $radius-sm;
+        font-family: $family;
+        margin-left: 10px;
+        &:focus{
+            outline-color: $accent;
+        }
+    }
+} 
+
+.form-control li input[type="submit"]{
+    width: 200px;
+    height: 30px;
+    border-radius: $radius-sm;
+    border-style: solid;
+    background: none;
+    font-family: $family;
+    font-weight: $wg-large;
+    font-size: $sz-small * 1.2;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-color: $black;
+    background-color: $accent;
+    margin-left: 20%;
+    &:hover{
+        color: $accent;
+        background-color: #fff;
+    }
+}
+
+#footer-nav{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    right: 10%;
+    a{
+        $sz-small: 1.2rem;
+        text-transform: capitalize;
+        font-weight: $wg-large;
+        font-size: math.div($sz-mid,1.8);
+        color: $primary-light;
+    }
+}
+
+
+
+
+
+
