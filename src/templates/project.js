@@ -1,25 +1,20 @@
 import React from 'react';
 import Layout from "../components/layout";
+import {graphql} from 'gatsby'
 
 
-const project = () => {
+const Project = ({data}) => {
+    const {title, site, description} = data.markdownRemark.frontmatter
+    const {html, excerpt} = data.markdownRemark
     return(
         <Layout>
             <header id="project-header">
-                <h1 id="project-title"></h1>
-                <p className="text" id="project-description"></p>
-                <p id="project-site"></p>
+                <h1 id="project-title">{title}</h1>
+                <p className="text" id="project-description">{description}</p>
+                <a href={site} id="project-site">go to project</a>
             </header>
             <main id="project-details">
-                <h2 id="tech-used-headline"></h2>
-                <ul id="tech-used-list">
-                    <li></li>
-                </ul>
-                <p id="repositiory-link"></p>
-                <article id="experience">
-                    <h2 id="experience-headline"></h2>
-                    <p></p>
-                </article>
+                <article dangerouslySetInnerHTML={{__html: html}} />
             </main>
         </Layout>
     )
@@ -28,4 +23,19 @@ const project = () => {
 
 
 
-export default Layout
+export default Project
+
+export const query = graphql`
+  query($slug: String!){
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+      frontmatter {
+        type
+        title
+        site
+        description
+      }
+      html 
+      excerpt
+    }
+  }
+`

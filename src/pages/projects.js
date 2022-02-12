@@ -60,7 +60,7 @@ const Projects = () => {
                               </Link>
                             )
                           }
-                          
+                          return;
                         })
                       }
                     </article>
@@ -75,15 +75,16 @@ const Projects = () => {
                         projectData.map(node => {
                           if(node.frontmatter.type === "mobile"){
                             return(
-                              <Link to={node.fields.slug} key={node.id}>
+                              <Link to={node.fields.slug} key={node.id} className="mobile-details">
                                 <Mobilesvg classes={`proj-screen`} />
-                                <article className="project-deets">
+                                <article>
                                   <h2>{node.frontmatter.title}</h2>
                                   <p>{` ${node.frontmatter.description}`.slice(0,80)+`...`}</p>
                                 </article>
                               </Link>
                             )
                           }
+                          return;
                         })
                       }
                     </article>
