@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+#project-header{
+    width: 100%;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+#project-title{
+    font-size: $sz-large * 2;
+    color: $primary;
+}
+
+#project-description{
+    font-size: math.div($sz-mid,1.7);
+    color: $primary;
+}
+
+#project-site{
+    font-size: $sz-small * 1.6;
+    color: $black;
+    font-weight: $wg-mid;
+    background-color: $accent;
+    padding: 7px 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    transition: color .3s;
+    &:hover{
+        color: $primary-light;
+    }
+}
+
+#project-details{
+    width: 100%;
+    height: 80vh;
+    padding: 10px 30px;
+    background-color: $black;
+    font-size: math.div($sz-mid, 1.6);
+    color: $primary-light;
+}
